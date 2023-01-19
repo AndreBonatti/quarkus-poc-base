@@ -1,0 +1,452 @@
+{
+	"info": {
+		"_postman_id": "5f326bc0-52d4-437f-a87d-eb8a5b4bf196",
+		"name": "Projeto exemplo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5673406"
+	},
+	"item": [
+		{
+			"name": "Caminho Feliz",
+			"item": [
+				{
+					"name": "cria-cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"JOSE DA SILVA\",\n  \"aniversario\": \"2023-01-31\",\n  \"anotacao\": \"string\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/projeto/cliente",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"projeto",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "altera-cliente",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"JOSE DA SILVA\",\n  \"aniversario\": \"2023-01-01\",\n  \"anotacao\": \"string\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/projeto/cliente/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"projeto",
+								"cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "busca-id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/v1/projeto/cliente/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"projeto",
+								"cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "busca-all-paginada",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/v1/projeto/cliente?filter-field=nome&filter-operation=LIKE&filter-value=Maria&order-field=id&order-sort=Descending&page=0&page-size=25",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"projeto",
+								"cliente"
+							],
+							"query": [
+								{
+									"key": "filter-field",
+									"value": "nome"
+								},
+								{
+									"key": "filter-operation",
+									"value": "LIKE"
+								},
+								{
+									"key": "filter-value",
+									"value": "Maria"
+								},
+								{
+									"key": "order-field",
+									"value": "id"
+								},
+								{
+									"key": "order-sort",
+									"value": "Descending"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "page-size",
+									"value": "25"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/v1/projeto/cliente/7809",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"projeto",
+								"cliente",
+								"7809"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "healthcheck-project",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/q/health",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"q",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Falhas - exceção",
+			"item": [
+				{
+					"name": "cria-cliente-erro-nome-400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"ERROR NOME\", function () {\r",
+									"     pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"JOS\",\n  \"aniversario\": \"2023-01-31\",\n  \"anotacao\": \"string\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/projeto/cliente",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"projeto",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cria-cliente-erro-data-400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"ERROR DATA\", function () {\r",
+									"     pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"JOSE DA SILVA\",\n  \"aniversario\": \"2020/01/01\",\n  \"anotacao\": \"string\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/projeto/cliente",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"projeto",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "busca-id-erro-notfound-404",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"ERROR NAO ENCONTRADO\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/v1/projeto/cliente/99999999999999",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"projeto",
+								"cliente",
+								"99999999999999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "busca-id-erro-notfound-404",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"ERROR NAO ENCONTRADO\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/v1/projeto/cliente/999999999",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"projeto",
+								"cliente",
+								"999999999"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
