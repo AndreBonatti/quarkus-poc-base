@@ -1,5 +1,7 @@
 package br.gov.caixa.negociosdigitais.config.seguranca;
 
+import br.gov.caixa.negociosdigitais.config.exception.BusinessException;
+import br.gov.caixa.negociosdigitais.config.exception.EnumBusinessExceptionMessage;
 import br.gov.caixa.negociosdigitais.service.arq.AuditService;
 import br.gov.caixa.negociosdigitais.service.arq.HealthCheckService;
 import lombok.extern.slf4j.Slf4j;
@@ -63,7 +65,7 @@ public class FilterRestController implements ContainerRequestFilter, ContainerRe
 
         // valida se recursos estão disponíveis healthcheck (banco de dados)
         if (!healthCheckService.statusDatabase())
-//            throw new BusinessException(EnumBusinessExceptionMessage.SEVICE_UNAVAILABLE_DATABASE);
+            throw new BusinessException(EnumBusinessExceptionMessage.SEVICE_UNAVAILABLE_DATABASE);
 
         if (htmlInjectionEnabled) { // Valida dados maliciosos
             HtmlInjection.validation(request);
