@@ -3,7 +3,7 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>br.gov.caixa.negociosdigitais</groupId>
+    <groupId>br.com.project</groupId>
     <artifactId>project-zero</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <properties>
@@ -88,6 +88,11 @@
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-scheduler</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-micrometer-registry-prometheus</artifactId>
         </dependency>
 
         <dependency>

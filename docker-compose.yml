@@ -14,26 +14,3 @@ volumes:
    cache:
      driver: local
 
-
-# ORACLE
-# https://www.oracle.com/br/technical-resources/articles/database-performance/oracle-db12-2-no-docker.html
-
-# CACHE
-# https://developer.jboss.org/thread/278865
-# https://github.com/infinispan/infinispan-images/blob/master/README.md
-# http://www.mastertheboss.com/soa-cloud/quarkus/how-to-connect-your-quarkus-application-to-infinispan/
-
-# Kafka
-# https://github.com/provectus/kafka-ui
-
-# - Validar com pessoal da caixa se o datagrid cache é igual ao infinispan server
-#  ** DETALHE QUARKUS CACHE EMBEBBED FOI DESCONTINUADO NA VERSÃO 1.6 JÁ ESTAMOS NA VERSÃO 2.11 , pelo que entendi no diagrama de referencia
-# - O que vai ser usado "Kafka / Ibm MQ"?
-#
-# ** NECESSIDADE DE COLOBARAÇÃO DE INFRAESTRUTURA MONITORAMENTO DOS SERVIÇOS (TELEMETRIA / HEALHCHECK / LOGS)
-#
-# - Utilizar Minikube no local host em vez de docker compose para ficar mais próximo a infra estrutura openshift
-
-
-
-

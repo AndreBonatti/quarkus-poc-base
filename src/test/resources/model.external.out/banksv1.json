@@ -1,0 +1,122 @@
+[
+  {
+    "ispb": "00000000",
+    "name": "BCO DO BRASIL S.A.",
+    "code": 1,
+    "fullName": "Banco do Brasil S.A."
+  },
+  {
+    "ispb": "00000208",
+    "name": "BRB - BCO DE BRASILIA S.A.",
+    "code": 70,
+    "fullName": "BRB - BANCO DE BRASILIA S.A."
+  },
+  {
+    "ispb": "00038121",
+    "name": "Selic",
+    "code": null,
+    "fullName": "Banco Central do Brasil - Selic"
+  },
+  {
+    "ispb": "00038166",
+    "name": "Bacen",
+    "code": null,
+    "fullName": "Banco Central do Brasil"
+  },
+  {
+    "ispb": "00204963",
+    "name": "CCR SEARA",
+    "code": 430,
+    "fullName": "COOPERATIVA DE CREDITO RURAL SEARA - CREDISEARA"
+  },
+  {
+    "ispb": "00250699",
+    "name": "AGK CC S.A.",
+    "code": 272,
+    "fullName": "AGK CORRETORA DE CAMBIO S.A."
+  },
+  {
+    "ispb": "00315557",
+    "name": "CONF NAC COOP CENTRAIS UNICRED",
+    "code": 136,
+    "fullName": "CONFEDERAÇÃO NACIONAL DAS COOPERATIVAS CENTRAIS UNICRED LTDA. - UNICRED DO BRASI"
+  },
+  {
+    "ispb": "00329598",
+    "name": "ÍNDIGO INVESTIMENTOS DTVM LTDA.",
+    "code": 407,
+    "fullName": "ÍNDIGO INVESTIMENTOS DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS LTDA."
+  },
+  {
+    "ispb": "00360305",
+    "name": "CAIXA ECONOMICA FEDERAL",
+    "code": 104,
+    "fullName": "CAIXA ECONOMICA FEDERAL"
+  },
+  {
+    "ispb": "00394460",
+    "name": "STN",
+    "code": null,
+    "fullName": "Secretaria do Tesouro Nacional - STN"
+  },
+  {
+    "ispb": "00416968",
+    "name": "BANCO INTER",
+    "code": 77,
+    "fullName": "Banco Inter S.A."
+  },
+  {
+    "ispb": "00460065",
+    "name": "COLUNA S.A. DTVM",
+    "code": 423,
+    "fullName": "COLUNA S/A DISTRIBUIDORA DE TITULOS E VALORES MOBILIÁRIOS"
+  },
+  {
+    "ispb": "00517645",
+    "name": "BCO RIBEIRAO PRETO S.A.",
+    "code": 741,
+    "fullName": "BANCO RIBEIRAO PRETO S.A."
+  },
+  {
+    "ispb": "00556603",
+    "name": "BANCO BARI S.A.",
+    "code": 330,
+    "fullName": "BANCO BARI DE INVESTIMENTOS E FINANCIAMENTOS S.A."
+  },
+  {
+    "ispb": "00558456",
+    "name": "BCO CETELEM S.A.",
+    "code": 739,
+    "fullName": "Banco Cetelem S.A."
+  },
+  {
+    "ispb": "00795423",
+    "name": "BANCO SEMEAR",
+    "code": 743,
+    "fullName": "Banco Semear S.A."
+  },
+  {
+    "ispb": "00806535",
+    "name": "PLANNER CV S.A.",
+    "code": 100,
+    "fullName": "Planner Corretora de Valores S.A."
+  },
+  {
+    "ispb": "00997185",
+    "name": "BCO B3 S.A.",
+    "code": 96,
+    "fullName": "Banco B3 S.A."
+  },
+  {
+    "ispb": "01023570",
+    "name": "BCO RABOBANK INTL BRASIL S.A.",
+    "code": 747,
+    "fullName": "Banco Rabobank International Brasil S.A."
+  },
+  {
+    "ispb": "01027058",
+    "name": "CIELO IP S.A.",
+    "code": 362,
+    "fullName": "CIELO S.A. - INSTITUIÇÃO DE PAGAMENTO"
+  }
+]

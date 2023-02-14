@@ -20,7 +20,7 @@
 * Valiadação de Dados com Hibernate validator - Como conceito de camada exception tem um layout definido, capturado a exception de hibernate-validator e trasnformado no layout padrão. 
 
 
-* Camada healthcheck (cpu, memoria, database, info)  "br/gov/caixa/negociosdigitais/resource/health"
+* Camada healthcheck (cpu, memoria, database, info)  "br/com/project/negociosdigitais/resource/health"
 
 
 * Utilizar lombok para gerar - GET/SET/CONSTRUCTOR/BUILDER/TOSTRING/LOGGER
@@ -32,22 +32,25 @@
 * Habilitado circuit braker quarkus findall paginado utilizando handler fallback https://www.youtube.com/watch?v=S7oYU8qBKIE
 
 
-#### FAZER AINDA:
+* Camada de teste unitário (Junit5/Mockito) - service
 
-* Camada de teste unitário - service
 
 * Teste de integração Postman
 
+
+* RestClient utizando o HTTPCLient java 11, para buscar informação api publica e armazenado no SimpleCache
+
+
+* Habilitado Micrometer, gerador de métricas compatível com prometheus
+
+
 #### Melhorias:
-
-* Camada de rest-client HTTP-CLient java 11
-
-* Utilização de cache nas camadas service 
 
 * Utilização de processos Async (processo reativos, processos thread)
 
 * Utilização de Filas e Stream 
 
+* Utilização de banco de dados NOSQL
 
 
 ## Running the application in dev mode
