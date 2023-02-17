@@ -1,8 +1,9 @@
 package br.com.project.resource.health;
 
-import br.com.project.utils.FormatByte;
 import br.com.project.config.arquitetura.HealthCheckService;
+import br.com.project.utils.FormatByte;
 import lombok.extern.slf4j.Slf4j;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.eclipse.microprofile.health.Readiness;
@@ -19,14 +20,19 @@ public class MemoryReadImpl implements HealthCheck {
 
     private static final MemoryUsage heapMemoryUsage = ManagementFactory.getMemoryMXBean().getHeapMemoryUsage();
 
+    @ConfigProperty(name = "health.memory.warn.enable")
+    Boolean memoryTestEnable;
+
     @Inject
     HealthCheckService healthCheckService;
 
     @Override
     public HealthCheckResponse call() {
 
+        var enableCheck = (memoryTestEnable) ? healthCheckService.testMemory() : true;
+
         return HealthCheckResponse.named("heap-memory")
-                .status(healthCheckService.testMemory())
+                .status(enableCheck)
                 .withData("max-heap", FormatByte.formatSize(heapMemoryUsage.getMax()))
                 .withData("used-heap", FormatByte.formatSize(heapMemoryUsage.getUsed()))
                 .withData("free-heap", FormatByte.formatSize(heapMemoryUsage.getMax() - heapMemoryUsage.getUsed()))

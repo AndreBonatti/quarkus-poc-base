@@ -7,14 +7,12 @@ import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.eclipse.microprofile.health.Readiness;
 
 import javax.enterprise.context.ApplicationScoped;
+import java.util.Date;
 
 @Slf4j
 @Readiness
 @ApplicationScoped
 public class InfoReadImpl implements HealthCheck {
-
-//    private static final OperatingSystemMXBean osBean =
-//            ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class);
 
     @ConfigProperty(name = "quarkus.application.version")
     String aplicationVersion;
@@ -30,9 +28,6 @@ public class InfoReadImpl implements HealthCheck {
         var jvmDate = System.getProperty("java.version.date");
         var jvmVersion = System.getProperty("java.vm.version");
 
-//        var total = osBean.getTotalPhysicalMemorySize();
-//        var free = osBean.getFreePhysicalMemorySize();
-
         return HealthCheckResponse.named("info-servise")
                 .status(true)
                 .withData("APP_VERSION", aplicationVersion)
@@ -42,9 +37,7 @@ public class InfoReadImpl implements HealthCheck {
                 .withData("USER_TIMEZ", userTimerZone)
                 .withData("JVM_Version", jvmVersion)
                 .withData("JVM_DATE", jvmDate)
-//                .withData("MEMORY_MAX", formatSize(total))
-//                .withData("MEMORY_USED", formatSize(total - free))
-//                .withData("MEMORY_FREE", formatSize(free))
+                .withData("TIME_STAMP", new Date().toString())
                 .build();
     }
 

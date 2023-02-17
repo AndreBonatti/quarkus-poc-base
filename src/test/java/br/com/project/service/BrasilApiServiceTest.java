@@ -126,9 +126,8 @@ class BrasilApiServiceTest {
     void banksV1FindbyIdNotFound() {
 
         when(externalRest.sendExternal(any())).thenReturn(forceHttpResponse());
-//        var bank = brasilApiService.banksV1FindbyId(999999999);
 
-        assertThrows(BusinessException.class, () ->  brasilApiService.banksV1FindbyId(999999999));
+        assertThrows(BusinessException.class, () ->  brasilApiService.banksV1FindbyId(Integer.MAX_VALUE));
 
     }
 }
