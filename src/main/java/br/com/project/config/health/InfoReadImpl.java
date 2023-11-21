@@ -1,4 +1,4 @@
-package br.com.project.resource.health;
+package br.com.project.config.health;
 
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.microprofile.config.inject.ConfigProperty;

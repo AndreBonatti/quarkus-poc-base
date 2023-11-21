@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 public class BrasilApiBanksCacheImpl implements SimpleCache<Integer, BrasilApiBanksV1Dto> {
 
-    private HashMap<Integer, BrasilApiBanksV1Dto> map = new HashMap();
+    private HashMap<Integer, BrasilApiBanksV1Dto> map = new HashMap<>();
     private Timer timer = new Timer();
     private long timeout;
 

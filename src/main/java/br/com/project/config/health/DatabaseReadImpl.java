@@ -1,6 +1,5 @@
-package br.com.project.resource.health;
+package br.com.project.config.health;
 
-import br.com.project.config.arquitetura.HealthCheckService;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;

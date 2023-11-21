@@ -2,8 +2,8 @@ package br.com.project.config.seguranca;
 
 import br.com.project.config.exception.BusinessException;
 import br.com.project.config.exception.EnumBusinessExceptionMessage;
-import br.com.project.config.arquitetura.AuditService;
-import br.com.project.config.arquitetura.HealthCheckService;
+import br.com.project.config.arquitetura.AuditRestInterceptor;
+import br.com.project.config.health.HealthCheckService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
@@ -31,7 +31,7 @@ public class FilterRestController implements ContainerRequestFilter, ContainerRe
     HealthCheckService healthCheckService;
 
     @Inject
-    AuditService auditService;
+    AuditRestInterceptor auditService;
 
     @ConfigProperty(name = "audit.status.not.audit")
     Integer[] listStatusNotAudit;
@@ -50,7 +50,7 @@ public class FilterRestController implements ContainerRequestFilter, ContainerRe
 
         request.setProperty("startTime", Instant.now());
         String body = "";
-        if (request.hasEntity()) {
+        if (request.hasEntity() && !request.getUriInfo().getPath().toUpperCase().contains("INSUMOS")) {
             try (InputStream entityStream = request.getEntityStream()) {
                 byte[] allBytes = entityStream.readAllBytes();
                 body = new String(allBytes, StandardCharsets.UTF_8);

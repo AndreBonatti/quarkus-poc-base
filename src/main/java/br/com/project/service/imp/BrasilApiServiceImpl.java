@@ -45,8 +45,10 @@ public class BrasilApiServiceImpl implements BrasilApiService {
     public List<BrasilApiBanksV1Dto> banksV1() {
         findBanks();
 
-        return cacheBanks.getAll().stream().sorted((b1, b2) -> b1.getName().compareTo(b2.getName())).collect(Collectors.toList());
+//        return cacheBanks.getAll().stream().sorted((b1, b2) -> b1.getName().compareTo(b2.getName())).collect(Collectors.toList());
+        return cacheBanks.getAll().stream().collect(Collectors.toList());
     }
+
 
     @Override
     public BrasilApiBanksV1Dto banksV1FindbyId(Integer code) {

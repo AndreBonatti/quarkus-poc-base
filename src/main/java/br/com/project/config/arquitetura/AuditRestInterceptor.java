@@ -13,7 +13,7 @@ import java.util.UUID;
 
 @Slf4j
 @RequestScoped
-public class AuditService {
+public class AuditRestInterceptor {
 
     public void sendAudit(ContainerRequestContext request, ContainerResponseContext response, UriInfo info) {
 

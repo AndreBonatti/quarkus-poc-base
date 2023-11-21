@@ -1,4 +1,4 @@
-package br.com.project.config.arquitetura;
+package br.com.project.config.health;
 
 import com.sun.management.OperatingSystemMXBean;
 import io.agroal.api.AgroalDataSource;

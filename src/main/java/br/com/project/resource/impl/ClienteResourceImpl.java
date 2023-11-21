@@ -16,14 +16,11 @@ import javax.inject.Inject;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 import java.net.URI;
-import java.util.LinkedList;
 
 @Slf4j
 public class ClienteResourceImpl implements ClienteResource {
 
     private final MeterRegistry registry;
-
-    LinkedList<Long> list = new LinkedList<>();
 
     // Update the constructor to create the gauge
     ClienteResourceImpl(MeterRegistry registry) {
@@ -36,9 +33,9 @@ public class ClienteResourceImpl implements ClienteResource {
     @Override
     public Response findByID(Long id) {
         Timer timer = registry.timer("cliente.resource.findbyid");
-        return timer.record(() -> {
-            return Response.ok(clienteService.findById(id)).build();
-        });
+        return timer.record(() ->
+                Response.ok(clienteService.findById(id)).build()
+        );
     }
 
     // == Não funciona anotação na interface
